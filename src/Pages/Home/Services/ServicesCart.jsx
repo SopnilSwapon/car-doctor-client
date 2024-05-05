@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 const ServicesCart = ({service}) => {
     const {title, price, img} = service;
     return (
@@ -18,6 +18,3 @@ const ServicesCart = ({service}) => {
 };
 
 export default ServicesCart;
-ServicesCart.propTypes = {
-    service: PropTypes.object
-}
