@@ -32,7 +32,7 @@ const AuthProvider = ({children}) => {
         setUser(currentUser);
         setLoading(false);
         if(!currentUser){
-            axios.post('http://localhost:5000/logout', loggedEmail, {
+            axios.post('https://car-doctor-server1-xi.vercel.app/logout', loggedEmail, {
                 withCredentials: true
             }
         )

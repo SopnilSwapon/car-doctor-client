@@ -3,7 +3,7 @@ import UseAuth from "../UseAuth/UseAuth";
 import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://car-doctor-server1-xi.vercel.app',
     withCredentials: true
 })
 

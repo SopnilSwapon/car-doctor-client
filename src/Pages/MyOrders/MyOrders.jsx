@@ -19,7 +19,7 @@ const MyOrders = () => {
   const handleDeleteOrder = id => {
     const proceed = confirm('are you sure you want to delete');
     if (proceed) {
-      fetch(`http://localhost:5000/order/${id}`, {
+      fetch(`https://car-doctor-server1-xi.vercel.app/order/${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())
@@ -35,7 +35,7 @@ const MyOrders = () => {
   };
   console.log(orders);
   const handleOrderConfirm = id => {
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://car-doctor-server1-xi.vercel.app/order/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'

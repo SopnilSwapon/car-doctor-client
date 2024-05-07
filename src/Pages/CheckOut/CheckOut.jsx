@@ -22,7 +22,7 @@ const CheckOut = () => {
             service_id: service._id,
             img: service.img
         }
-        fetch('http://localhost:5000/order',{
+        fetch('https://car-doctor-server1-xi.vercel.app/order',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
