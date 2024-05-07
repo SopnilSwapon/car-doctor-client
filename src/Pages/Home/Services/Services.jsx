@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
 import ServicesCart from "./ServicesCart";
+import UseServices from "../../../UseServices/UseServices";
 
 const Services = () => {
-    const [servicesData, setServicesData] = useState([]);
-    useEffect(()=> {
-        fetch('http://localhost:5000/services')
-        .then(res => res.json())
-        .then(data => {
-            setServicesData(data)
-        })
-    },[])
+  const servicesData = UseServices();
     return (
         <div>
             <div className="space-y-4">

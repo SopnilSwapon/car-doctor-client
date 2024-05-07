@@ -1,18 +1,21 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+import { useEffect, useState } from "react";
 import OrderRow from "./OrderRow";
-import axios from "axios";
+// import axios from "axios";
+import UseAuth from "../../UseAuth/UseAuth";
+import useAxios from "../../useAxios/useAxios";
 
 const MyOrders = () => {
-  const { user } = useContext(AuthContext)
-  const [orders, setOrders] = useState([])
-  const url = `http://localhost:5000/order?email=mon@karap.com`
+  const {user} = UseAuth();
+  const [orders, setOrders] = useState([]);
+  const useAxiosSecure = useAxios();
+  const url = `/order?email=${user.email}`
   useEffect(() => {
-    axios.get(url, {withCredentials: true})
+    
+    useAxiosSecure.get(url)
     .then(res => {
       setOrders(res.data)
     })
-  }, [url]);
+  }, [url, useAxiosSecure]);
   const handleDeleteOrder = id => {
     const proceed = confirm('are you sure you want to delete');
     if (proceed) {
