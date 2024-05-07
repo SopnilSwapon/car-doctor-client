@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
 
 const CheckOut = () => {
     const service = useLoaderData();
@@ -40,14 +39,14 @@ const CheckOut = () => {
     }
     return (
         <div>
-            <h2>book service: {service.title} </h2>
+            <h2 className="text-3xl font-bold text-center">book service: {service.title} </h2>
       <form onSubmit={handleOrder} className="card-body">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input type="text" name="name" defaultValue={user?.displayname}  className="input input-bordered" required />
+          <input type="text" name="name" defaultValue={user?.displayName}  className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -72,7 +71,6 @@ const CheckOut = () => {
         </div>
         </div>
       </form>
-      <ToastContainer></ToastContainer>
     </div>
     );
 };
