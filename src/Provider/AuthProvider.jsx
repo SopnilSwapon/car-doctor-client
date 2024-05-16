@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import  {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import app from "../firebase/firebase.confg";
 import axios from "axios";
-
+import app from "../firebase/firebase.confiq";
+const auth = getAuth(app);
 export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
-    const auth = getAuth(app)
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
